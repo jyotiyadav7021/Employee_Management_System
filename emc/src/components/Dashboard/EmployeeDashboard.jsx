@@ -5,6 +5,7 @@ const EmployeeDashboard = () => {
   return (
     <div>
       <Header/>
+      <EmployeeDashboard/>
     </div>
   )
 }
