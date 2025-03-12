@@ -122,5 +122,8 @@ const employees = [
     }
 
     export const getLocalStorage = ()=>{
+        const data = localStorage.getitem('employees')
+
+        console.log(JSON.parse(data))
         
     }
