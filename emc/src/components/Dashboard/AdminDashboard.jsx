@@ -1,10 +1,11 @@
 import React from 'react'
-import EmployeeDashboard from './EmployeeDashboard'
+
+import Header from '../Other/Header'
 
 const AdminDashboard = () => {
   return (
     <div>
-      <EmployeeDashboard/>
+      <Header/>
     </div>
   )
 }
