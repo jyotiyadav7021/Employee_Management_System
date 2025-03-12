@@ -8,3 +8,8 @@
 body{
   background-color: #111;
 }
+
+#tasklist::-webkit-scrollbar{
+  background-color: transparent;
+  height: 5px;
+}
