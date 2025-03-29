@@ -9,48 +9,51 @@ import { AuthContext } from './context/AuthProvider'
 const App = () => {
 
   const [user, setUser] = useState(null)
-  const [loggedInUser, setloggedInUser] = useState(null)
-  const authData = useContext(AuthContext)
+  
+  // const authData = useContext(AuthContext)
 
   
   
 
-  useEffect(()=>{
-    if(authData){
-      const loggedInUser = localStorage.getItem("loggedInUser")
-      if(loggedInUser){
-        setUser(loggedInUser.role)
+  // useEffect(()=>{
+  //   if(authData){
+  //     const loggedInUser = localStorage.getItem("loggedInUser")
+  //     if(loggedInUser){
+  //       setUser(loggedInUser.role)
 
-      }
-    }
-  }, [authData]);
+  //     }
+  //   }
+  // }, [authData]);
 
-  const handleLogin = (email,password)=>{
-    if(email == 'admin@me.com' && password == '123'){
-      setUser('admin')
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
-    }else if(authData){
-      const employee = authData.employees.find((e)=>email == e.mail && e.password == password)
-      if(employee){
-        setUser('employee')
-        setloggedInUser('employee')
-        localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
-      }
+  // const handleLogin = (email,password)=>{
+  //   if(email == 'admin@me.com' && password == '123'){
+  //     setUser('admin')
       
-    }
-    else{
-      alert("invalid Credential")
+  //     localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
+  //   }else if(authData){
+  //     const employee = authData.employees.find((e)=>email == e.mail && e.password == password)
+  //     if(employee){
+  //       setUser('employee')
+  //       setLoggedInUserdata('employee')
+  //       localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
+        
+  //     }
+      
+  //   }
+  //   else{
+  //     alert("invalid Credential")
 
-    }
-  }
+  //   }
+  // }
 
   
 
 
   return (
     <div>
-      {!user ? <Login handleLogin={handleLogin}/>: ''}
-      {user == 'admin' ? <AdminDashboard/> : (user == 'employee' ? <EmployeeDashboard data={loggedInUser}/> : null)}
+      {!user ? <Login />: ''}
+      { <AdminDashboard/> }
+      {<EmployeeDashboard/>} 
     </div>
   )
 }
