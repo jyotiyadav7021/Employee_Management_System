@@ -25,35 +25,27 @@ const App = () => {
   //   }
   // }, [authData]);
 
-  // const handleLogin = (email,password)=>{
-  //   if(email == 'admin@me.com' && password == '123'){
-  //     setUser('admin')
-      
-  //     localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
-  //   }else if(authData){
-  //     const employee = authData.employees.find((e)=>email == e.mail && e.password == password)
-  //     if(employee){
-  //       setUser('employee')
-  //       setLoggedInUserdata('employee')
-  //       localStorage.setItem('loggedInUser',JSON.stringify({role:'employee'}))
-        
-  //     }
-      
-  //   }
-  //   else{
-  //     alert("invalid Credential")
-
-  //   }
-  // }
-
+  const handleLogin = (email,password)=>{
+    if(email == 'admin@me.com' && password == '123'){
+      setUser('admin')
+      console.log(user)
+    }
+    else if (email == 'user@me.com' && password == '123'){
+      setUser('employee')
+      console.log(user)
+    }
+    else{
+      alert("Invalid Credentials")
+    }
+  }
   
 
 
   return (
     <div>
-      {!user ? <Login />: ''}
-      { <AdminDashboard/> }
-      {<EmployeeDashboard/>} 
+      {!user ? <Login handleLogin={handleLogin}/>: ''}
+      {user == 'admin' ? <AdminDashboard/> :<EmployeeDashboard/> }
+      
     </div>
   )
 }
