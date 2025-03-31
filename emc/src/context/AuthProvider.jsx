@@ -5,7 +5,9 @@ export const AuthContext = createContext()
 
 const AuthProvider = ({children}) => {
 
-  const [userdata, setUserData] = useState(null)
+  const [userData, setUserData] = useState(null)
+
+  
 
   useEffect(()=>{
     setLocalStorage()
@@ -18,7 +20,7 @@ const AuthProvider = ({children}) => {
 
   return (
     <div>
-      <AuthContext.Provider value={userdata}>
+      <AuthContext.Provider value={userData}>
         {children}
        
       </AuthContext.Provider>
