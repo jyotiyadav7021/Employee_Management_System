@@ -27,7 +27,7 @@ const employees = [
               "failed": false
           }
       ],
-      "taskNumbers": { "active": 1, "newTask": 1, "completed": 0, "failed": 0 }
+      "taskNumbers": { "active": 3, "newTask": 1, "completed": 2, "failed": 0 }
   },
   {
       "id": 2,

@@ -1,5 +1,4 @@
 import React from 'react'
-import NewTask from './NewTask'
 
 const AcceptTask = () => {
   return (
