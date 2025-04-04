@@ -15,19 +15,23 @@ const CreateTask = () => {
     
     setNewTask({taskTitle, taskDescription, taskDate, category, active:false,newTask:true,failed:false,completed:false})
 
-    const data = JSON.parse(localStorage.getItem('employees'))
+    
+
+    const data = localStorage.getItem('employees');
+    console.log(data)
    
-    data.forEach(function(elem){
-      if(asignTo == elem.firstName){
-        console.log("yess aagaya")
-      }
-    });
+    // data.forEach(function(elem){
+    //   if(asignTo == elem.firstName){
+    //     console.log("yess aagaya")
+    //   }
+    // });
     
   }
   return (
     <div className='p-5 bg-[#1c1c1c] mt-7 rounded'>
         <form onSubmit={(e)=>{
-            submitHandler(e)
+          submitHandler(e)
+          
         }} className='flex w-full flex-wrap  items-start justify-between'>
           <div className='w-1/2'> 
             <div>
