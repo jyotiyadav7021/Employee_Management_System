@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 const CreateTask = () => {
 
   const [taskTitle,setTaskTitle] = useState('')
@@ -9,7 +10,7 @@ const CreateTask = () => {
   const [category,setCategory] = useState('')
 
   const [newTask, setNewTask] = useState({})
-
+  
   const submitHandler = (e)=>{
     e.preventDefault()
     
@@ -17,8 +18,8 @@ const CreateTask = () => {
 
     
 
-    const data = localStorage.getItem('employees');
-    console.log(data)
+    const data = localStorage.getItem('employees')
+    
    
     // data.forEach(function(elem){
     //   if(asignTo == elem.firstName){
