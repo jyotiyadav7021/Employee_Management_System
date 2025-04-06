@@ -19,7 +19,7 @@ const CreateTask = () => {
     
 
     const data = localStorage.getItem('employees')
-    
+    console.log(data)
    
     // data.forEach(function(elem){
     //   if(asignTo == elem.firstName){
